@@ -1,6 +1,12 @@
+# OS / IDE
 .DS_Store
 .idea/
 .vscode/
 
+# Python
 venv/
 .venv/
+
+# Visualisation
+# (default output of stylegan2/generate.py)
+out/
