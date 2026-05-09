@@ -2,6 +2,19 @@
 This repository is for the purpose of learning how to use and manipulate StyleGan pre-trained models
 
 ## Usage
+### Install
+Clone the repo
+```shell
+git clone https://github.com/SlyZ1/Latent-Space-Faces.git
+cd Latent-Space-Faces
+```
+
+Initialise the submodule (StyleGAN2)
+```shell
+git submodule update --init --recursive
+```
+
+### Run
 Create a virtual environement with your favorite Python version (tested with 3.14.4)
 ```shell
 python3 -m venv venv
