@@ -15,7 +15,8 @@ git submodule update --init --recursive
 ```
 
 ### Setup
-Create a virtual environment with your favorite Python version (tested with Python 3.14.4).
+Create a virtual environment with your favorite Python version (tested with Python 3.11.15).
+> NOTE: newer version of Python (3.13 or 3.14) might not work well with torchvision
 ```shell
 python3 -m venv venv
 ```
