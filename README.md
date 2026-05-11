@@ -51,7 +51,7 @@ Download a pretrained model amongst (will be saved as `./models/<MODEL NAME>.pkl
 ### Run
 Run the StyleGAN2 test sampling.
 ```shell
-python3 stylegan2/generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 --network=./models/<MODEL NAME>.pkl
+python stylegan2/generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 --network=./models/<MODEL NAME>.pkl
 ```
 
 Expected results for `FFHQ`:
