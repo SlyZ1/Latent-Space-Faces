@@ -1,5 +1,7 @@
-# Latent-Space-Faces
-This repository is intended for learning how to use and manipulate StyleGAN pre-trained models.
+# Latent Space Faces
+
+> [!NOTE]
+> This repository is intended for learning how to use and manipulate StyleGAN pre-trained models.
 
 ## Usage
 ### Install
@@ -16,7 +18,7 @@ git submodule update --init --recursive
 
 ### Setup
 Create a virtual environment with your favorite Python version (tested with Python 3.11.15).
-> NOTE: newer version of Python (3.13 or 3.14) might not work well with torchvision
+> NOTE: newer versions of Python (3.13 or 3.14) might not work well with torchvision.
 ```shell
 python3 -m venv venv
 ```
@@ -36,7 +38,7 @@ Install all the dependencies.
 pip install -r requirements.txt
 ```
 
-Download a pretrained model amongst (will be saved as `./models/<MODEL NAME>.pkl`):
+Download a pretrained model (saved as `./models/<MODEL NAME>.pkl`):
 - ffhq
 - metfaces
 - afhqcat
@@ -64,3 +66,37 @@ Expected results for `MetFaces`:
 |`out/seed0085.png`|`out/seed0265.png`|`out/seed0297.png`|`out/seed0849.png`|
 |-|-|-|-|
 |![MetFaces(85)](res/metfaces0085.png)|![MetFaces(265)](res/metfaces0265.png)|![MetFaces(297)](res/metfaces0297.png)|![MetFaces(849)](res/metfaces0849.png)|
+
+## Classifier
+![Classifier Prediction](res/classifier_prediction.png)
+
+### Architecture And Dataset
+The classifier is based on a ResNet-18 backbone pretrained on ImageNet-1K. The backbone is frozen and a linear classification head is trained on CelebA binary attributes.
+
+The current classifier predicts three attributes, in this order:
+- `Eyeglasses`
+- `Male`
+- `Young`
+
+The CelebA dataset is expected at `dataset/celeba/` with:
+- `img_align_celeba/`
+- `attributes.txt`
+- `landmarks.txt`
+
+### Usage
+Train the classifier with:
+```shell
+python classifier.py
+```
+
+The latest checkpoint is saved to:
+```text
+models/classifier.pt
+```
+
+`classifier.py` can also be imported as a library:
+```python
+from classifier import Classifier
+```
+
+See `classifier_test.ipynb` for a classifier usage example.
