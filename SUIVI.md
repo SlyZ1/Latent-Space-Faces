@@ -54,6 +54,11 @@ Mise en place du projet avec le prof
     - Avec simplement une loss MSE sur $\mathcal{W}$, la prediction fonctionne relativement bien pour des visages générés mais beaucoup moins bien pour de vraies images
     - En ajoutant un terme de reconstruction, l'entrainement devient trop lent pour avoir une longeur raisonnable
 
+- **Quentin** | Avancement sur la PCA et Style Mixing
+    - Analyse de la PCA sur 1000 échantillons de l'espace W,
+    - Début du désenchevêtrement des composantes comme présenté dans le papier numéro 3
+    - Essais de style mixing en combinant deux codes latents.
+
 ## S6 (8 juin)
 ...
 
