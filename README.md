@@ -51,7 +51,7 @@ Explore our implementation of the projection method explained in https://arxiv.o
 which is situated in projecting-demo.ipynb
 
 Results:
-|-|`out/seed0085.png`|`out/antonin2.png`|`out/antonin_frere.png`|
-|-|-|-|-|
-|target|![FFHQ(85)](out/seed0085.png)|![FFHQ(265)](out/antonin2.png)|![FFHQ(297)](out/antonin_frere.png)|
-|result|![](projection%20results/z_imnet_v1_mse_features.png)|![FFHQ(265)](projection%20results/9_antonin_train_noise.jpg)|![FFHQ(297)](projection%20results/9_frere_anto_train_noise.png)|
+|-|`out/seed0085.png`|`images_aligned/antonin2.png`|
+|-|-|-|
+|target|![FFHQ(85)](out/seed0085.png)|![FFHQ(265)](out/antonin2.png)|
+|result|![](projection%20results/z_imnet_v1_mse_features.png)|![FFHQ(265)](projection%20results/12_antonin_lpips.png)|
