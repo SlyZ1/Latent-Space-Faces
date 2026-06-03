@@ -39,13 +39,14 @@ Mise en place du projet avec le prof
 ## S5 (1 juin)
 - **Colin** | Avancement sur le fine-tuning du resnet, résultats prometteurs
 - **Baptiste** | Quasi finalisation de la projection par optimisation:
+  - Centrer les visages avec landmarks 
   - Première boucle de sampling aléatoire sur 1500 éléments pour compute le centre de W, sa variance selon chaque composante, et un point de départ à priori bon 
   - Optimisation directement sur W
   - Optimisation également sur les layers de bruit de styleGAN2
   - Diffusion (ajout de bruit au vecteur latent à chaque iteration)
   - Loss utilisée ($ℒ_{RegNoise}$ étant la loss décrite dans "Analyzing and Improving the Image Quality of StyleGAN") :
 ```math
-ℒ = 4 * ℒ_{pixel} + 0.5 * ℒ_{features} + 1e5 * ℒ_{RegNoise}
+ℒ = 4 * ℒ_{pixel} + 0.5 * ℒ_{LPIPS} + 2e4 * ℒ_{RegNoise}
 ```
   - Résultats très bons, temps < 5min
 - **Antonin** | Compression du dataset et Tentative de projection apprise
