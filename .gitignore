@@ -11,3 +11,5 @@ venv/
 # (default output of stylegan2/generate.py)
 out/
 models/
+
+custom_dataset/

@@ -36,31 +36,22 @@ Install all the dependencies.
 pip install -r requirements.txt
 ```
 
-Download a pretrained model amongst (will be saved as `./models/<MODEL NAME>.pkl`):
-- ffhq
-- metfaces
-- afhqcat
-- afhqdog
-- afhqwild
-- cifar10
-- brecahad
+Download the pretained model ffhq for 512*512 images :
+https://huggingface.co/DragGan/DragGan-Models/blob/20dedd0259ff3009fceefa531c3be8ae4f11cd82/stylegan2-ffhq-512x512.pkl
+
+
+### Run default
+Run the StyleGAN2 default projection algorithm.
 ```shell
-./download-model.sh <MODEL NAME>
+python projector.py --outdir=out --target=~/mytargetimg.png --network=./models/stylegan2-ffhq-512x512.pkl
 ```
 
+### Run custom
+Explore our implementation of the projection method explained in https://arxiv.org/pdf/1912.04958 \
+which is situated in projecting-demo.ipynb
 
-### Run
-Run the StyleGAN2 test sampling.
-```shell
-python stylegan2/generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 --network=./models/<MODEL NAME>.pkl
-```
-
-Expected results for `FFHQ`:
-|`out/seed0085.png`|`out/seed0265.png`|`out/seed0297.png`|`out/seed0849.png`|
+Results:
+|-|`out/seed0085.png`|`out/antonin2.png`|`out/antonin_frere.png`|
 |-|-|-|-|
-|![FFHQ(85)](res/ffhq0085.png)|![FFHQ(265)](res/ffhq0265.png)|![FFHQ(297)](res/ffhq0297.png)|![FFHQ(849)](res/ffhq0849.png)|
-
-Expected results for `MetFaces`:
-|`out/seed0085.png`|`out/seed0265.png`|`out/seed0297.png`|`out/seed0849.png`|
-|-|-|-|-|
-|![MetFaces(85)](res/metfaces0085.png)|![MetFaces(265)](res/metfaces0265.png)|![MetFaces(297)](res/metfaces0297.png)|![MetFaces(849)](res/metfaces0849.png)|
+|target|![FFHQ(85)](out/seed0085.png)|![FFHQ(265)](out/antonin2.png)|![FFHQ(297)](out/antonin_frere.png)|
+|result|![](projection%20results/z_imnet_v1_mse_features.png)|![FFHQ(265)](projection%20results/9_antonin_train_noise.jpg)|![FFHQ(297)](projection%20results/9_frere_anto_train_noise.png)|
