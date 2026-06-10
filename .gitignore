@@ -10,6 +10,9 @@ __pycache__/
 
 # Other
 # (default output of stylegan2/generate.py)
-out/
-models/
+out/*
+models/*
+!models/classifier.pt
+!models/eyeglass_boundary.npz
+!models/young_boundary.npz
 dataset/
