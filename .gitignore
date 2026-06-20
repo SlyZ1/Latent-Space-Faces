@@ -16,3 +16,6 @@ models/*
 !models/eyeglass_boundary.npz
 !models/young_boundary.npz
 dataset/
+
+figures/
+temp.typ
