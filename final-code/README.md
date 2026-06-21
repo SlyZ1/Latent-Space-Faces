@@ -3,6 +3,9 @@
 - `attributs-latents.ipynb`: Ce notebook montre l'édition d'attributs tels que les lunettes ou l'âge en utilisant la méthode décrite dans l'article _InterFaceGAN_. \
     Il utilise les frontières pré-calculées, car leur calcul nécessite un classifieur (ResNet18 fine-tuné) et un très large dataset (65k images).
 
+- `projection-optimisation.ipynb`: Nous avons commencé la projection de visages dans l'espace latent en faisant par optimisation. Pour cela, nous nous sommes inspiré des articles _Analyzing and Improving the Image Quality of StyleGAN_ et _Image2StyleGAN++_ en optimisant sur $W^+$ et sur les cartes de bruit de synthèse. De plus à chaque itération nous ajoutons du bruit au vecteur de $W^+$. La fonction de perte est composée d'une MSE pixel à pixel, d'une perte LPIPS (ou VGG) et d'une perte sur les cartes de bruit pour être sûrs qu'elles ne stockent pas d'information liée à l'image projetée. Une courte partie implémente l'alignement des visages à la méthode de FFHQ, bien que pas vraiment nécessaire pour l'optimisation.
+
+
 - `projection-apprentissage.ipynb`: TODO
 
 - `projection-perceptuelle.ipynb`: Pour améliorer les résultats du notebook précédent (`projection-apprentissage.ipynb`), nous avons exploré les idées de l'article _Encoding In Style_ (ou _pixel2style2pixel_, ou pSp). Ces idées sont décrites et partiellement implémentées (seule la loss a été utilisée, leur modèle étant considérablement plus grand que ce que notre capacité de calcul nous permet d'utiliser) dans ce notebook.
