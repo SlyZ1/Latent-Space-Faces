@@ -5,8 +5,7 @@
 
 - `projection-optimisation.ipynb`: Nous avons commencé la projection de visages dans l'espace latent en faisant par optimisation. Pour cela, nous nous sommes inspiré des articles _Analyzing and Improving the Image Quality of StyleGAN_ et _Image2StyleGAN++_ en optimisant sur $W^+$ et sur les cartes de bruit de synthèse. De plus à chaque itération nous ajoutons du bruit au vecteur de $W^+$. La fonction de perte est composée d'une MSE pixel à pixel, d'une perte LPIPS (ou VGG) et d'une perte sur les cartes de bruit pour être sûrs qu'elles ne stockent pas d'information liée à l'image projetée. Une courte partie implémente l'alignement des visages à la méthode de FFHQ, bien que pas vraiment nécessaire pour l'optimisation.
 
-
-- `projection-apprentissage.ipynb`: TODO
+- `projection-apprentissage.ipynb`: Ce notebook entraîne un encodeur basé sur ResNet-34 à projeter des images dans l'espace latent $\mathcal{W}^+$ de StyleGAN2. Il est entraîné par une perte MSE sur un dataset de 4 096 images synthétiques.
 
 - `projection-perceptuelle.ipynb`: Pour améliorer les résultats du notebook précédent (`projection-apprentissage.ipynb`), nous avons exploré les idées de l'article _Encoding In Style_ (ou _pixel2style2pixel_, ou pSp). Ces idées sont décrites et partiellement implémentées (seule la loss a été utilisée, leur modèle étant considérablement plus grand que ce que notre capacité de calcul nous permet d'utiliser) dans ce notebook.
 

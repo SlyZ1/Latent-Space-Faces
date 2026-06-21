@@ -6,8 +6,12 @@
 # Python
 venv/
 .venv/
+__pycache__/
 
 # Other
 # (default output of stylegan2/generate.py)
 out/
 models/
+
+dataset/
+figures/
