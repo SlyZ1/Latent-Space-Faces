@@ -1,7 +1,8 @@
 # Latent-Space-Faces
 This repository is intended for learning how to use and manipulate StyleGAN pre-trained models.
 
-> [!WARNING] The report pdf file isn't displayed correctly by Github, please download it if you want to read it properly.
+> [!WARNING] 
+> The report pdf file isn't displayed correctly by Github, please download it if you want to read it properly.
 
 ## Usage
 ### Install
